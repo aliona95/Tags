@@ -1,5 +1,8 @@
 package com.aeappss.instagramtags;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -310,6 +313,22 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_search:
                 Toast.makeText(getApplicationContext(), "AS CIA", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.instagram:
+                Toast.makeText(getApplicationContext(), "AS CIA INSTAGRAM", Toast.LENGTH_SHORT).show();
+
+                Uri uri = Uri.parse("http://instagram.com/_u/xxx");
+                Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
+
+                likeIng.setPackage("com.instagram.android");
+
+                try {
+                    startActivity(likeIng);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://instagram.com/xxx")));
+                }
+                
                 return true;
             default:
                 Toast.makeText(getApplicationContext(), "AS CIA000", Toast.LENGTH_SHORT).show();
