@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Instagram Tags</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string-array name="query_suggestions" >
+        <item> miau </item>
+        <item> furniture </item>
+        <item> instagram </item>
+
+    </string-array>
+</resources>
